@@ -53,13 +53,6 @@ class BookInStock
   end
 
   def price_as_string
-    number, fraction = self.price.to_s.split '.'
-    if fraction
-      price_formatted = fraction.length == 1 ? "$#{self.price}0" : "$#{self.price}"
-    else
-      price_formatted = "$#{self.price}.00"
-    end
-    price_formatted
+    "$%.2f" % self.price
   end
-  
 end
